@@ -13,10 +13,10 @@
       <Menubar.Menu>
         <Menubar.Trigger>Go</Menubar.Trigger>
         <Menubar.Content>
-          <Menubar.Item on:click={() => alert("go home")}>Home</Menubar.Item>
+          <Menubar.Item><a href="/">Home</a></Menubar.Item>
           <Menubar.Separator />
-          <Menubar.Item>Forward</Menubar.Item>
-          <Menubar.Item>Back</Menubar.Item>
+          <Menubar.Item on:click={() => window.history.forward()}>Forward</Menubar.Item>
+          <Menubar.Item on:click={() => window.history.back()}>Back</Menubar.Item>
         </Menubar.Content>
     </Menubar.Menu>
 
@@ -54,9 +54,7 @@
     <Menubar.Menu>
       <Menubar.Trigger>Games</Menubar.Trigger>
       <Menubar.Content>
-        <Menubar.Item>
-          Singleplayer
-        </Menubar.Item>
+        <Menubar.Item>Singleplayer</Menubar.Item>
         <Menubar.Separator />
         <Menubar.Item>Play ROM</Menubar.Item>
         <Menubar.Item>Patch ROM</Menubar.Item>
