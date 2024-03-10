@@ -2,7 +2,8 @@
     import mainLogo from "$lib/images/GBA_2_main_2.png";
     let hovered = false;
 
-    let possibleTitles = [
+    //include all old titles here, maybe change occasionally?
+    let titles = [
         "Svelte??? What's this...",
         "Guess who's back, back again?",
         "Welcome back!",
@@ -20,8 +21,7 @@
         "Best DS Emulator!",
         "Wii when!?!??!?"
     ];
-
-    let randomTitle = possibleTitles[Math.floor(Math.random() * possibleTitles.length)];
+    
     import { Button } from "$lib/components/ui/button";
   </script>
 
@@ -41,7 +41,7 @@
   </div>
 
   <h1 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-3xl mt-4 text-center italic">
-    {randomTitle}
+    Ready To Play?
   </h1>
 
     <div class="flex justify-center mt-6">
