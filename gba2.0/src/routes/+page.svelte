@@ -47,7 +47,7 @@
     <div class="flex justify-center mt-6">
     <div class="flex gap-2">
         <Button>Add a Library</Button>
-        <Button variant="secondary" disabled>Upload a Library</Button>
+        <Button variant="secondary" href="/singleplayer">Play!</Button>
     </div>
     </div>
 

@@ -42,6 +42,7 @@
 	"dependencies": {
 		"bits-ui": "^0.19.5",
 		"clsx": "^2.1.0",
+		"cmdk-sv": "^0.0.15",
 		"mode-watcher": "^0.2.2",
 		"path": "^0.12.7",
 		"svelte-radix": "^1.0.3",
