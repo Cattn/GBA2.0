@@ -42,10 +42,10 @@
       <Menubar.Menu>
         <Menubar.Trigger>Options</Menubar.Trigger>
         <Menubar.Content>
-          <Menubar.Item>
+          <Menubar.Item href="/options/theme">
             Change Theme
           </Menubar.Item>
-          <Menubar.Item>Change Icon Pack</Menubar.Item>
+          <Menubar.Item href="/options/icon">Change Icon Pack</Menubar.Item>
           <Menubar.Separator />
           <Menubar.Item>Report Issue</Menubar.Item>
         </Menubar.Content>

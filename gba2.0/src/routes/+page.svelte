@@ -41,7 +41,7 @@
   </div>
 
   <h1 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-3xl mt-4 text-center italic">
-    Ready to play?
+    {randomTitle}
   </h1>
 
     <div class="flex justify-center mt-6">
