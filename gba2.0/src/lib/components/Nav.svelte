@@ -2,7 +2,6 @@
     import * as Menubar from "$lib/components/ui/menubar";
     import * as Avatar from "$lib/components/ui/avatar";
     import logo from '$lib/images/logo.png';
-    import * as Drawer from "$lib/components/ui/drawer";
 </script>
 <Menubar.Root class="mt-1 ml-1 mr-1">
     <Avatar.Root>

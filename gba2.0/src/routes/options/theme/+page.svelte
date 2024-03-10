@@ -1,34 +1,46 @@
 <script lang="ts">
     import * as Card from "$lib/components/ui/card/index.js";
     import * as Carousel from "$lib/components/ui/carousel/index.js";
+    import { browser } from "$app/environment";
     
-    import theme1 from "$lib/images/themes/1.png";
-    import theme2 from "$lib/images/themes/2.png";
-    import theme3 from "$lib/images/themes/3.png";
-    import theme4 from "$lib/images/themes/4.png";
-    import theme5 from "$lib/images/themes/5.png";
-    import theme6 from "$lib/images/themes/6.png";
+    import defaultTheme from "$lib/images/themes/1.png";
+    import greenTheme from "$lib/images/themes/2.png";
+    import oldGreenTheme from "$lib/images/themes/3.png";
+    import redTheme from "$lib/images/themes/4.png";
+    import sunsetTheme from "$lib/images/themes/5.png";
+    import synthTheme from "$lib/images/themes/6.png";
 
     import Button from "$lib/components/ui/button/button.svelte";
+    
+    function changeTheme(theme) {  
+        if (browser) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        }
+    }
 </script>
-
-<div class="flex justify-center mt-12">
+<h1 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-3xl text-center mt-8 mb-3">Change Theme</h1>
+<div class="flex justify-center">
 <Carousel.Root class="w-full max-w-5xl">
     <Carousel.Content class="-ml-1">
-      {#each Array(5) as _, i (i)}
+      {#each Array(6) as _, i (i)}
         <Carousel.Item class="pl-1">
           <div class="p-1">
             <Card.Root>
               <Card.Content
                 class="flex-auto items-center justify-center p-6"
               >
-              <img
-              src={i === 0 ? theme1 : i === 1 ? theme2 : i === 2 ? theme3 : i === 3 ? theme4 : i === 4 ? theme5 : theme6}
-              alt="Gray by Drew Beamer"
-              class="h-full w-full rounded-md"
-            />
+              <img src={
+                i === 0 ? defaultTheme :
+                i === 1 ? greenTheme :
+                i === 2 ? oldGreenTheme :
+                i === 3 ? redTheme :
+                i === 4 ? sunsetTheme :
+                i === 5 ? synthTheme :
+                defaultTheme
+                } alt="Gray by Drew Beamer" class="h-full w-full rounded-md" />
                 <div class="flex justify-center mt-2">
-                    <Button>Change Theme</Button>
+                    <Button on:click={() => changeTheme(i === 0 ? "dark" : i === 1 ? "green" : i === 2 ? "oldGreen" : i === 3 ? "red" : i === 4 ? "sunset" : "synth")}>Change Theme</Button>
                 </div>
               </Card.Content>
             </Card.Root>
