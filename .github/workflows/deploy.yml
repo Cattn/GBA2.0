@@ -16,8 +16,8 @@ jobs:
       #   uses: pnpm/action-setup@v3
       #   with:
       #     version: 8
-      - name: Change directory to subdir
-        run: cd gba2.0
+      # - name: Change directory to subdir
+      #   run: cd gba2.0
 
       - name: Install Node.js
         uses: actions/setup-node@v4
