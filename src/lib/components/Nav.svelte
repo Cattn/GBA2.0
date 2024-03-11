@@ -2,6 +2,7 @@
     import * as Menubar from "$lib/components/ui/menubar";
     import * as Avatar from "$lib/components/ui/avatar";
     import logo from '$lib/images/logo.png';
+    import { base } from '$app/paths';
 </script>
 <Menubar.Root class="mt-1 ml-1 mr-1">
     <Avatar.Root>
@@ -12,7 +13,7 @@
       <Menubar.Menu>
         <Menubar.Trigger>Go</Menubar.Trigger>
         <Menubar.Content>
-          <Menubar.Item href="">Home</Menubar.Item>
+          <Menubar.Item href="{base}/">Home</Menubar.Item>
           <Menubar.Separator />
           <Menubar.Item on:click={() => window.history.forward()}>Forward</Menubar.Item>
           <Menubar.Item on:click={() => window.history.back()}>Back</Menubar.Item>
@@ -41,10 +42,10 @@
       <Menubar.Menu>
         <Menubar.Trigger>Options</Menubar.Trigger>
         <Menubar.Content>
-          <Menubar.Item href="/options/theme">
+          <Menubar.Item href="{base}/options/theme">
             Change Theme
           </Menubar.Item>
-          <Menubar.Item href="/options/icon">Change Icon Pack</Menubar.Item>
+          <Menubar.Item href="{base}/options/icon">Change Icon Pack</Menubar.Item>
           <Menubar.Separator />
           <Menubar.Item>Report Issue</Menubar.Item>
         </Menubar.Content>
@@ -53,7 +54,7 @@
     <Menubar.Menu>
       <Menubar.Trigger>Games</Menubar.Trigger>
       <Menubar.Content>
-        <Menubar.Item href="singleplayer">Singleplayer</Menubar.Item>
+        <Menubar.Item href="{base}/singleplayer">Singleplayer</Menubar.Item>
         <Menubar.Separator />
         <Menubar.Item>Play ROM</Menubar.Item>
         <Menubar.Item>Patch ROM</Menubar.Item>
