@@ -17,7 +17,7 @@ jobs:
       #   with:
       #     version: 8
       # - name: Change directory to subdir
-      #   run: cd gba2.0
+      #   run: cd gba2.0 
 
       - name: Install Node.js
         uses: actions/setup-node@v4
