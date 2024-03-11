@@ -18,6 +18,7 @@ const config = {
 	paths: {
 		"$lib": ["./src/lib"],
 		"$lib/*": ["./src/lib/*"],
+		base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
 	},
 	alias: {
 		lib: "src/lib",
