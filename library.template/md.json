@@ -1,0 +1,13 @@
+{
+    "name": "mathadventure's library!",
+    "consoles": [
+        {
+            "name": "NES",
+            "folder": "nes"
+        },
+        {
+            "name": "GBA",
+            "folder": "gba"
+        }
+    ]
+}
