@@ -15,14 +15,10 @@ const config = {
 				exclude: ['<all>']
 			}
 		}),
+		alias: { 'lib/': './src/routes/lib/' },
 	},
 	paths: {
-		"$lib": ["./src/lib"],
-		"$lib/*": ["./src/lib/*"],
 		base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
-	},
-	alias: {
-		lib: "src/lib",
 	},
 };
 

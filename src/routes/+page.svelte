@@ -23,6 +23,7 @@
     ];
     
     import { Button } from "$lib/components/ui/button";
+    import { base } from '$app/paths';
   </script>
 
   <div class="flex align-center justify-center mt-44">
@@ -46,8 +47,8 @@
 
     <div class="flex justify-center mt-6">
     <div class="flex gap-2">
-        <Button>Add a Library</Button>
-        <Button variant="secondary" href="/singleplayer">Play!</Button>
+        <Button href="{base}/library">Add a Library</Button>
+        <Button variant="secondary" href="{base}/singleplayer">Play!</Button>
     </div>
     </div>
 
