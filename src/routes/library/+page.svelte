@@ -13,7 +13,7 @@
         <Input class="mr-2" type="url" placeholder="Enter URL" />
         <Button type="submit">Add</Button>
         </div>
-        <p class="text-sm text-muted-foreground mr-2">Need help? View our documentation <Button class="p-0" variant="link" href="/docs/library">here</Button></p>
+        <p class="text-sm text-muted-foreground mr-2">Need help? View our documentation <Button class="p-0" variant="link" href="/docs/">here</Button></p>
     </div>
 
   </form>
