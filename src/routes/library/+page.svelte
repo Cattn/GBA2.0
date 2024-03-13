@@ -31,6 +31,7 @@
                         acc.push({
                           name: consoleN.name,
                           folder: consoleN.folder,
+                          core: consoleN.core,
                           source: url,
                         });
                       } else {

@@ -11,6 +11,7 @@
     };
 
     let currentSrc = "";
+    let currentConsole = "";
 
     const games = {
     }
@@ -36,6 +37,7 @@
                 if (data.games) {
                     games[consoleName] = data.games;
                     currentSrc = selectedConsole.source + selectedConsole.folder;
+                    currentConsole = selectedConsole.core;
                 }
             })
             .catch((error) => {
@@ -103,7 +105,7 @@
         {#if selectedStatus}
             {#if games[selectedStatus.value]}
                 {#each games[selectedStatus.value] as game}
-                    <a href="/play?game={currentSrc}/{game.file}" class="group rounded-lg border px-4 py-4 shadow-sm hover:border-gray-400  hover:shadow-md focus-within:border-gray-500 focus-within:shadow-md">
+                    <a href="/play?core={currentConsole}&game={currentSrc}/{game.file}" class="group rounded-lg border px-4 py-4 shadow-sm hover:border-gray-400  hover:shadow-md focus-within:border-gray-500 focus-within:shadow-md">
                         <h2 class="text-lg font-bold mb-2">{game.title}</h2>
                         <p class="text-sm text-muted-foreground">{selectedStatus.label}</p>
                     </a>

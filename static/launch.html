@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<div class="h-screen">
+    <div id='game'></div>
+</div>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    game = urlParams.get("game");
+    core = urlParams.get("core");
+    window.EJS_player = '#game';
+    window.EJS_core = core;
+    window.EJS_gameUrl = game;
+    window.EJS_pathtodata = "https://cdn.emulatorjs.org/stable/data/";
+</script>
+<script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
+    #game {
+        height: 100vh;
+    }
+</style>
