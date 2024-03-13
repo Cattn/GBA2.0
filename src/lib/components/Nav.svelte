@@ -25,9 +25,10 @@
         <Menubar.Content>
             <Menubar.Item>More Links</Menubar.Item>
             <Menubar.Separator />
-          <Menubar.Item>Github</Menubar.Item>
-          <Menubar.Item>Website</Menubar.Item>
+          <Menubar.Item href="https://github.com/Cattn/GBA2.0">Github</Menubar.Item>
+          <Menubar.Item href="https://mathstudy.dev/">Website</Menubar.Item>
           <Menubar.Item>Discord</Menubar.Item>
+          <Menubar.Item href="{base}/docs">Docs</Menubar.Item>
           <Menubar.Separator />
         <Menubar.Sub>
             <Menubar.SubTrigger>Contact</Menubar.SubTrigger>

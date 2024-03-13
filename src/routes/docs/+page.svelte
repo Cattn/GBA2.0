@@ -22,6 +22,19 @@
             }
         ]
     }
+
+    const json2 = {
+        "games": [
+            {
+                "title": "Fake Racing",
+                "file": "fake.nes"
+            },
+            {
+                "title": "Real Racing",
+                "file": "real.nes"
+            },
+        ]
+    }
 </script>
     
     
@@ -56,7 +69,7 @@
                 </p>    
 
                 <p class="mt-3 font-medium">
-                    This site was created by Cattn & the MSG team, you can view more information about us at our <Button class="px-0 font-bold" variant="link" href="https://mathstudy.dev">site</Button>
+                    This site was created by Cattn & the MSG team, you can view more information about us at our <Button class="px-0 font-bold underline" variant="link" href="https://mathstudy.dev">site</Button>
                 </p>
 
 
@@ -108,21 +121,32 @@
                         <div class="ml-4">
                             <JsonView {json} />
                         </div>
-                        <p class="mt-3 font-medium">
+                        <p class="mt-3 font-light">
                             In this example, you are defining the name of a folder, as well as the path to the folder, then doing this for each folder within your library.
                         </p>
+                        <h2 class="mt-2 text-lg font-bold ml-2">index.json Example</h2>
+                        <div class="ml-4">
+                            <JsonView json={json2} />
+                        </div>
+                        <p class="mt-3 font-light">
+                            In this example, you are defining the name of a game, and then it's filename.
+                        </p>
+                        <p class="mt-2 font-bold">
+                            In the future, we plan to have support for automated tools that can handle much of this for you.
+                        </p>
+                        
                       </Accordion.Content>
                     </Accordion.Item>
                     <Accordion.Item value="item-2">
                         <Accordion.Trigger class="font-bold text-lg">Custom Values</Accordion.Trigger>
                         <Accordion.Content>
-                          There's been a lot of stir involving nintendo and their policy towards emulators and sites. We are just ensuring all of our bases are covered.
+                          In the future we may add support for custom options regarding theme, images, etc with your library.
                         </Accordion.Content>
                       </Accordion.Item>
                       <Accordion.Item value="item-3">
-                        <Accordion.Trigger class="font-bold text-lg">How do I host my own Library?</Accordion.Trigger>
+                        <Accordion.Trigger class="font-bold text-lg">Library Creation Tool</Accordion.Trigger>
                         <Accordion.Content>
-                          Please view our "Library" section of our Docs.
+                          We plan to develop a tool that will automatically create a skeleton for you, populate an existing library with proper folders, and more!
                         </Accordion.Content>
                       </Accordion.Item>
                   </Accordion.Root>
