@@ -23,18 +23,18 @@
       <Menubar.Menu>
         <Menubar.Trigger>About</Menubar.Trigger>
         <Menubar.Content>
-            <Menubar.Item>More Links</Menubar.Item>
+            <Menubar.Item href="https://discord.com/servers/math-study-934807331668099142">More Links</Menubar.Item>
             <Menubar.Separator />
           <Menubar.Item href="https://github.com/Cattn/GBA2.0">Github</Menubar.Item>
           <Menubar.Item href="https://mathstudy.dev/">Website</Menubar.Item>
-          <Menubar.Item>Discord</Menubar.Item>
+          <Menubar.Item href="https://discord.com/servers/math-study-934807331668099142">Discord</Menubar.Item>
           <Menubar.Item href="{base}/docs">Docs</Menubar.Item>
           <Menubar.Separator />
         <Menubar.Sub>
             <Menubar.SubTrigger>Contact</Menubar.SubTrigger>
             <Menubar.SubContent>
-              <Menubar.Item>Discord</Menubar.Item>
-              <Menubar.Item>Email</Menubar.Item>
+              <Menubar.Item href="https://discord.com/servers/math-study-934807331668099142">Discord</Menubar.Item>
+              <Menubar.Item href="mailto:inquiry@mathstudy.dev">Email</Menubar.Item>
             </Menubar.SubContent>
         </Menubar.Sub>
         </Menubar.Content>
@@ -48,7 +48,7 @@
           </Menubar.Item>
           <Menubar.Item href="{base}/options/icon">Change Icon Pack</Menubar.Item>
           <Menubar.Separator />
-          <Menubar.Item>Report Issue</Menubar.Item>
+          <Menubar.Item href="https://github.com/Cattn/GBA2.0/issues/new/">Report Issue</Menubar.Item>
         </Menubar.Content>
       </Menubar.Menu>
 
@@ -60,7 +60,7 @@
         <Menubar.Item>Play ROM</Menubar.Item>
         <Menubar.Item>Patch ROM</Menubar.Item>
         <Menubar.Separator />
-        <Menubar.Item on:click={() => alert("Suggest a Game")}>Suggest a Game</Menubar.Item>
+        <Menubar.Item href="https://discord.com/servers/math-study-934807331668099142">Suggest a Game</Menubar.Item>
       </Menubar.Content>
     </Menubar.Menu>
 
