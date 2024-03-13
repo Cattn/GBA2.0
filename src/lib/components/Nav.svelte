@@ -56,6 +56,7 @@
       <Menubar.Trigger>Games</Menubar.Trigger>
       <Menubar.Content>
         <Menubar.Item href="{base}/singleplayer">Singleplayer</Menubar.Item>
+        <Menubar.Item href="{base}/library">Manage Library</Menubar.Item>
         <Menubar.Separator />
         <Menubar.Item>Play ROM</Menubar.Item>
         <Menubar.Item>Patch ROM</Menubar.Item>

@@ -66,23 +66,23 @@
   </form>
 </div>
 
-<h1 class="text-center scroll-m-20 text-3xl font-bold tracking-tight lg:text-3xl mt-4">Current Sources:</h1>
-<div class="mt-2 grid gap-4">
-    {#each $sources as source}
-        <div class="bg-base-200 p-4 rounded-lg text-center">
-            <h2 class="text-lg font-medium">{source.name}</h2>
-            <p class="italic font-light text-sm">{source.source}</p>
-        </div>
-    {/each}
+
+<h1 class="text-center scroll-m-20 text-3xl font-bold tracking-tight lg:text-3xl mt-4">Sources</h1>
+<div class="mt-4 ml-4 mr-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+  {#each $sources as source (source.name)}
+      <a href="{source.source}" class="group rounded-lg border px-4 py-4 shadow-sm hover:border-gray-400  hover:shadow-md focus-within:border-gray-500 focus-within:shadow-md">
+          <h2 class="text-lg font-bold mb-2">{source.name}</h2>
+          <p class="text-sm text-muted-foreground">{source.source}</p>
+      </a>
+  {/each}
 </div>
 
-<h1 class="text-center scroll-m-20 text-3xl font-bold tracking-tight lg:text-3xl mt-4">Current Consoles:</h1>
-<div class="mt-2 grid gap-4">
-    {#each $consoles as console}
-        <div class="bg-base-200 p-1 rounded-lg text-center">
-            <h2 class="text-lg font-medium">{console.name}</h2>
-            <p class="italic text-sm text-muted-foreground">{console.folder}</p>
-            <p class="italic text-sm text-muted-foreground">{console.source}</p>
-        </div>
+<h1 class="text-center scroll-m-20 text-3xl font-bold tracking-tight lg:text-3xl mt-4">Consoles</h1>
+<div class="mt-4 ml-4 mr-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    {#each $consoles as console (console.name)}
+        <a href="{base}/singleplayer?console={console.name}" class="group rounded-lg border px-4 py-4 shadow-sm hover:border-gray-400  hover:shadow-md focus-within:border-gray-500 focus-within:shadow-md">
+            <h2 class="text-lg font-bold mb-2">{console.name}</h2>
+            <p class="text-sm text-muted-foreground">{console.source}</p>
+        </a>
     {/each}
 </div>
