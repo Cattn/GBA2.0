@@ -1,6 +1,7 @@
 <script lang="ts">
     import { Button } from "$lib/components/ui/button";
     import { browser } from "$app/environment";
+    import { base } from "$app/paths";
 
     let game = "";
     let core = "";
@@ -10,7 +11,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         game = urlParams.get("game");
         core = urlParams.get("core");
-        url = "/launch.html?core=" + core + "&game=" + game;
+        url = base + "/launch.html?core=" + core + "&game=" + game;
     }
     
 </script>
