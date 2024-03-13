@@ -48,11 +48,17 @@
             });
         }
     }
+
+    function resetStorage() {
+      sources.set([]);
+      consoles.set([]);
+    }
   </script>
    
 <svelte:head>
     <title>Library Manager</title> 
 </svelte:head>
+
 
 <h1 class="text-center scroll-m-20 text-3xl font-bold tracking-tight lg:text-3xl mt-4">Add Library</h1>
 <div class="flex justify-center mt-6 ml-24">
@@ -63,6 +69,7 @@
         <Button on:click={submit}>Add</Button>
         </div>
         <p class="text-sm text-muted-foreground">Need help? View our documentation <Button class="p-0" variant="link" href="{base}/docs/">here</Button></p>
+        <Button class="ml-16" variant="destructive" on:click={resetStorage}>Clear All Libraries</Button>
     </div>
   </form>
 </div>
