@@ -19,6 +19,9 @@
         }
     }
 </script>
+<svelte:head>
+    <title>Theme Manager</title> 
+</svelte:head>
 <h1 class="scroll-m-20 text-3xl font-bold tracking-tight lg:text-3xl text-center mt-8 mb-3">Change Theme</h1>
 <div class="flex justify-center">
 <Carousel.Root class="w-full max-w-5xl">

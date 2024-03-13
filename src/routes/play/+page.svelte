@@ -9,5 +9,7 @@
         game = urlParams.get("game");
     }
 </script>
-
+<svelte:head>
+    <title>Playing: </title> 
+</svelte:head>
     <Button variant="secondary">{game}</Button>

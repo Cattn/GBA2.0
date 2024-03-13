@@ -25,7 +25,9 @@
     import { Button } from "$lib/components/ui/button";
     import { base } from '$app/paths';
   </script>
-
+<svelte:head>
+  <title>GBA2.0</title> 
+</svelte:head>
   <div class="flex align-center justify-center mt-44">
     <img
       src={mainLogo}

@@ -3,7 +3,7 @@
     import * as Accordion from "$lib/components/ui/accordion";
     import { JsonView } from '@zerodevx/svelte-json-view'
 
-    let docContent;
+    let docContent = "";
 
     function selectedDoc(doc) {
         docContent = doc;
@@ -37,6 +37,9 @@
     }
 </script>
     
+<svelte:head>
+    <title>Documentation - {docContent}</title> 
+</svelte:head>
     
     <div class="flex ml-2">
         <aside class="ml-40 w-1/5 mt-8">

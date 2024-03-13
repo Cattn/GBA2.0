@@ -3,109 +3,47 @@
     import * as Popover from "$lib/components/ui/popover/index.js";
     import { Button } from "$lib/components/ui/button/index.js";
     import { tick } from "svelte";
+    import { consoles, sources } from "$lib/store";
    
     type Status = {
       value: string;
       label: string;
     };
 
+    let currentSrc = "";
+
     const games = {
-      "Game Boy Advanced": [
-        {
-          name: "007",
-          value: "007",
-        },
-        {
-          name: "007",
-          value: "007",
-        },
-        {
-          name: "007",
-          value: "007",
-        },
-        {
-          name: "007",
-          value: "007",
-        },
-        {
-          name: "007",
-          value: "007",
-        },
-        {
-          name: "007",
-          value: "007",
-        },
-        {
-          name: "007",
-          value: "007",
-        },
-        {
-          name: "007",
-          value: "007",
-        },
-        {
-          name: "007",
-          value: "007",
-        },
-        {
-          name: "007",
-          value: "007",
-        },
-        {
-          name: "007",
-          value: "007",
-        },
-        {
-          name: "Advanced Wars",
-          value: "advanced-wars",
-        }
-      ],
-      "n64": [
-        {
-          name: "Super Mario World",
-          value: "Super Mario World",
-        },
-        {
-          name: "Super Mario 64",
-          value: "Super Mario 64",
-        }
-      ]
     }
    
     const statuses: Status[] = [
-      {
-        value: "Game Boy Advanced",
-        label: "Game Boy Advanced",
-      },
-      {
-        value: "Game Boy Color",
-        label: "Game Boy Color"
-      },
-      {
-        value: "Game Boy",
-        label: "Game Boy"
-      },
-      {
-        value: "snes",
-        label: "SNES"
-      },
-      {
-        value: "nes",
-        label: "NES"
-      },
-      {
-        value: "n64",
-        label: "N64"
-      },
-      {
-        value: "nds",
-        label: "NDS"
-      },
-      {
-        value: "Sega Master System",
-        label: "Sega Master System"
-      }
-    ];
+      ];
+
+    if ($consoles) {
+        $consoles.forEach((c) => {
+          statuses.push({
+            value: c.name,
+            label: c.name,
+          });
+        });
+    }
+    
+    function loadGames(consoleName){
+        if (consoleName) {
+            const selectedConsole = $consoles.find((c) => c.name === consoleName);
+            fetch(selectedConsole.source + selectedConsole.folder + "/index.json")
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.games) {
+                    games[consoleName] = data.games;
+                    currentSrc = selectedConsole.source + selectedConsole.folder;
+                }
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+        }
+    }
+    
    
     let open = false;
     let value = "";
@@ -117,9 +55,10 @@
         document.getElementById(triggerId)?.focus();
       });
     }
-    import { Separator } from "$lib/components/ui/separator";
   </script>
-
+<svelte:head>
+  <title>Singleplayer</title> 
+</svelte:head>
 
     <div class="flex ml-4 mt-4 justify-center mr-4">
         <div class="flex items-center space-x-4">
@@ -146,6 +85,7 @@
                         onSelect={(currentValue) => {
                             value = currentValue;
                             closeAndFocusTrigger(ids.trigger);
+                            loadGames(status.value);
                         }}
                         >
                         {status.label}
@@ -159,16 +99,18 @@
         </div>
     </div>
 
-    <div class="mt-4">
-        <h1 class="text-center">
-            {#if selectedStatus}
-                {#if games[selectedStatus.value]}
-                    {#each games[selectedStatus.value] as game}
-                        <Button variant="ghost"><a href="/play?game={game.value}">{game.name}</a></Button>
-                    {/each}
-                {:else}
-                    <p>No Games found.</p>
-                {/if}
+    <div class="mt-4 ml-4 mr-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {#if selectedStatus}
+            {#if games[selectedStatus.value]}
+                {#each games[selectedStatus.value] as game}
+                    <a href="/play?game={currentSrc}/{game.file}" class="group rounded-lg border px-4 py-4 shadow-sm hover:border-gray-400  hover:shadow-md focus-within:border-gray-500 focus-within:shadow-md">
+                        <h2 class="text-lg font-bold mb-2">{game.title}</h2>
+                        <p class="text-sm text-gray-600">{selectedStatus.label}</p>
+                    </a>
+                {/each}
+            {:else}
+                <p class="col-span-1 text-center">No Games found.</p>
             {/if}
-        </h1>
+        {/if}
     </div>
+
