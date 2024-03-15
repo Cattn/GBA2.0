@@ -3,6 +3,7 @@
     import { Input } from "$lib/components/ui/input/";
     import { base } from '$app/paths';
     import { sources, consoles } from "$lib/store";
+    import * as AlertDialog from "$lib/components/ui/alert-dialog";
 
     let url = "";
     function submit() {
@@ -61,20 +62,34 @@
 
 
 <h1 class="text-center scroll-m-20 text-3xl font-bold tracking-tight lg:text-3xl mt-4">Add Library</h1>
-<div class="flex justify-center mt-6 ml-24">
-  <form class="flex w-full max-w-sm items-center space-x-2">
-    <div>
-        <div class="flex">
-        <Input class="mr-2" type="url" bind:value={url} placeholder="Enter URL" />
-        <Button on:click={submit}>Add</Button>
-        </div>
-        <p class="text-sm text-muted-foreground">Need help? View our documentation <Button class="p-0" variant="link" href="{base}/docs/">here</Button></p>
-        <Button class="ml-16" variant="destructive" on:click={resetStorage}>Clear All Libraries</Button>
-    </div>
+<div class="flex flex-col items-center justify-center mt-6 mx-auto max-w-screen-md">
+  <form class="flex flex-col sm:flex-row items-center justify-center gap-4">
+    <Input class="sm:mr-2" type="url" bind:value={url} placeholder="Enter URL" />
+    <Button on:click={submit}>Add</Button>
   </form>
+
+  <p class="text-center text-sm text-muted-foreground mt-2">Need help? View our documentation <Button class="p-0" variant="link" href="{base}/docs/">here</Button></p>
+
+  <AlertDialog.Root>
+    <AlertDialog.Trigger asChild let:builder>
+      <Button builders={[builder]} variant="destructive">Clear Libraries</Button>
+    </AlertDialog.Trigger>
+    <AlertDialog.Content>
+      <AlertDialog.Header>
+        <AlertDialog.Title>Are you sure?</AlertDialog.Title>
+        <AlertDialog.Description>
+          This action cannot be undone. All of your libraries and consoles will be removed. You can always re-add them later.
+        </AlertDialog.Description>
+      </AlertDialog.Header>
+      <AlertDialog.Footer>
+        <AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
+        <AlertDialog.Action on:click={resetStorage}>Continue</AlertDialog.Action>
+      </AlertDialog.Footer>
+    </AlertDialog.Content>
+  </AlertDialog.Root>
 </div>
 
-
+<!-- Add a popup/confirmation later for clearing-->
 <h1 class="text-center scroll-m-20 text-3xl font-bold tracking-tight lg:text-3xl mt-4">Sources</h1>
 <div class="mt-4 ml-4 mr-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
   {#each $sources as source (source.name)}
