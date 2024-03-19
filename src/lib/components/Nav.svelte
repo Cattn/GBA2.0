@@ -3,6 +3,7 @@
     import * as Avatar from "$lib/components/ui/avatar";
     import logo from '$lib/images/logo.png';
     import { base } from '$app/paths';
+    import { Button } from "$lib/components/ui/button/index.js";
 </script>
 <Menubar.Root class="mt-1 ml-1 mr-1">
     <Avatar.Root>
@@ -11,7 +12,9 @@
       </Avatar.Root>
 
       <Menubar.Menu>
-        <Menubar.Trigger>Go</Menubar.Trigger>
+        <Menubar.Trigger>
+          Go
+        </Menubar.Trigger>
         <Menubar.Content>
           <Menubar.Item href="{base}/">Home</Menubar.Item>
           <Menubar.Separator />
@@ -46,7 +49,7 @@
           <Menubar.Item href="{base}/options/theme">
             Change Theme
           </Menubar.Item>
-          <Menubar.Item href="{base}/options/icon">Change Icon Pack</Menubar.Item>
+          <Menubar.Item href="{base}/options/tile">Customize Tiles</Menubar.Item>
           <Menubar.Separator />
           <Menubar.Item href="https://github.com/Cattn/GBA2.0/issues/new/">Report Issue</Menubar.Item>
         </Menubar.Content>

@@ -11,9 +11,20 @@
 			document.documentElement.setAttribute('data-theme', theme);
 		}
 	}
+
+	let firstTime;
+	if (browser) {
+		firstTime = localStorage.getItem('firstTime');
+		if (!firstTime) {
+			localStorage.setItem('firstTime', 'false');
+		}
+	}
 </script>
 <Nav/>
 
+{#if !firstTime}
+<div class="ml-2 h-12 w-fit flex justify-center text-sm italic items-center">Click any of the buttons above to navigate!</div>
+{/if}
 <slot />
 
 <Footer/>
