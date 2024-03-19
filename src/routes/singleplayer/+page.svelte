@@ -60,7 +60,7 @@
             .then((data) => {
                 if (data.games) {
                     games[consoleName] = data.games;
-                    currentSrc = selectedConsole.source + selectedConsole.folder;
+                    currentSrc = selectedConsole.source + "/" + selectedConsole.folder;
                     currentConsole = selectedConsole.core;
                 }
             })
